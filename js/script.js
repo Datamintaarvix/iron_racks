@@ -1067,14 +1067,14 @@ function renderBookingView() {
           </div>
           <div style="display:flex; flex-direction:column; gap:1.25rem;">
             ${cart.map(item => `
-              <div style="display:flex; gap:1.25rem; align-items:center; padding-bottom:1.25rem; border-bottom:1px solid #E5EBF2;">
+              <div style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center; padding-bottom:1.25rem; border-bottom:1px solid #E5EBF2;">
                 <img src="${item.image}" alt="${item.name}" style="width:72px; height:72px; border-radius:12px; object-fit:cover; background:#F3F7FC; border:1px solid #E5EBF2;">
-                <div style="flex:1;">
+                <div style="flex:1; min-width:180px;">
                   <strong style="font-size:1.05rem; color:var(--color-black); display:block;">${item.name}</strong>
                   <span style="font-size:0.825rem; color:var(--brand-muted);">${item.shortSpecs || ''}</span>
                   <div style="font-weight:800; color:var(--color-navy); font-size:1rem; margin-top:0.35rem;">₹${item.price.toLocaleString('en-IN')} each</div>
                 </div>
-                <div style="display:flex; align-items:center; gap:0.85rem;">
+                <div style="display:flex; align-items:center; gap:0.85rem; margin-left:auto;">
                   <div class="qty-counter-glass" style="box-shadow:none;">
                     <button style="width:32px; height:34px;" onclick="adjustBookingQty(${item.id}, -1)">-</button>
                     <span style="padding:0 0.6rem; font-weight:800; font-size:0.9rem;">${item.qty}</span>
@@ -1095,7 +1095,7 @@ function renderBookingView() {
             02 &bull; Customer &amp; Delivery Information
           </h3>
           <form id="booking-checkout-form" onsubmit="handleCheckoutSubmission(event)">
-            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom:1.25rem;">
+            <div class="booking-two-col-grid">
               <div>
                 <label style="display:block; font-size:0.85rem; font-weight:700; color:var(--color-black); margin-bottom:0.4rem;">Full Name *</label>
                 <input type="text" id="chk-order-name" value="${profile.name || ''}" placeholder="e.g. Abdur Rehman" style="width:100%; padding:0.85rem 1rem; border-radius:10px; border:1.5px solid #E5EBF2; background:#FFF; font-size:0.95rem;" required>
@@ -1111,7 +1111,7 @@ function renderBookingView() {
               <textarea id="chk-order-address" rows="3" placeholder="Building/Shop No, Street, Area in Bengaluru" style="width:100%; padding:0.85rem 1rem; border-radius:10px; border:1.5px solid #E5EBF2; background:#FFF; font-size:0.95rem;" required>${profile.address || ''}</textarea>
             </div>
             
-            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom:1.25rem;">
+            <div class="booking-two-col-grid">
               <div>
                 <label style="display:block; font-size:0.85rem; font-weight:700; color:var(--color-black); margin-bottom:0.4rem;">PIN Code (Optional)</label>
                 <input type="text" id="chk-order-pincode" value="${profile.pincode || ''}" placeholder="e.g. 560051" style="width:100%; padding:0.85rem 1rem; border-radius:10px; border:1.5px solid #E5EBF2; background:#FFF; font-size:0.95rem;">
