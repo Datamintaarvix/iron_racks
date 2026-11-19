@@ -1,0 +1,28 @@
+{
+  "name": "modis-metal-racks-and-furnitures",
+  "version": "1.0.0",
+  "description": "Production E-Commerce & Corporate Website for Modi's Metal Racks & Furnitures (Est. 2001)",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js"
+  },
+  "keywords": [
+    "metal-racks",
+    "slotted-angle-racks",
+    "iron-racks",
+    "bangalore",
+    "e-commerce",
+    "razorpay"
+  ],
+  "author": "MODI'S METAL RACKS & FURNITURES",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.13",
+    "razorpay": "^2.9.2"
+  }
+}
+

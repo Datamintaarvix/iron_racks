@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /backend/
+
+Sitemap: https://modis-metal-racks.vercel.app/sitemap.xml
+
